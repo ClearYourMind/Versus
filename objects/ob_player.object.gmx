@@ -61,6 +61,8 @@ pose = p.Stand
 walkX = 0
 walkY = 0
 
+weapon = noone
+
 
 </string>
           </argument>
@@ -203,6 +205,89 @@ case d.Down:
 x += walkX
 y += walkY
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Carry weapon
+
+var _wx, _xy, _wd;
+
+if instance_exists(weapon) {
+    switch dir {
+    case d.Left:
+        _wx = -10
+        _wy = -3
+        _wd  = 0
+        break;
+    case d.Right:
+        _wx = 10
+        _wy = -3
+        _wd  = 0
+        break;
+    case d.Up:
+        _wx = 0
+        _wy = -5
+        _wd  = 1
+        break;
+    case d.Down:
+        _wx = 0
+        _wy = 10
+        _wd  = -1
+        break;
+    }
+    
+    weapon.x = x + _wx
+    weapon.y = y + _wy
+    weapon.depth = depth + _wd
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ob_barrel">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Pick up
+
+_weap = other.id
+if _weap.readyToPick
+if not instance_exists(weapon) {
+    weapon = _weap
+    weapon.readyToPick = false
+}
 </string>
           </argument>
         </arguments>
