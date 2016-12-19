@@ -6,17 +6,21 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sp_player_walk_dn</sprite>
-    <sprite>sprites\sp_player_walk_up</sprite>
-    <sprite>sprites\sp_player_walk_rt</sprite>
-    <sprite>sprites\sp_player_walk_lt</sprite>
+    <sprites name="player">
+      <sprite>sprites\sp_player_walk_lt</sprite>
+      <sprite>sprites\sp_player_walk_dn</sprite>
+      <sprite>sprites\sp_player_walk_rt</sprite>
+      <sprite>sprites\sp_player_walk_up</sprite>
+    </sprites>
+    <sprite>sprites\sp_barrel</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\ob_master</object>
     <object>objects\ob_player</object>
     <object>objects\ob_player_2</object>
-    <object>objects\ob_master</object>
+    <object>objects\ob_barrel</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>
