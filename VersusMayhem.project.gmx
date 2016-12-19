@@ -6,7 +6,8 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sp_player</sprite>
+    <sprite>sprites\sp_player_walk_dn</sprite>
+    <sprite>sprites\sp_player_walk_up</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
