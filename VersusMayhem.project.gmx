@@ -13,6 +13,10 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\ob_player</object>
+    <object>objects\ob_master</object>
+  </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>
   </rooms>
