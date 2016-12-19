@@ -15,6 +15,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\ob_player</object>
+    <object>objects\ob_player_2</object>
     <object>objects\ob_master</object>
   </objects>
   <rooms name="rooms">

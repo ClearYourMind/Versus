@@ -35,6 +35,12 @@ enum d {
     Down
 }
 
+// poses
+enum p {
+    Stand,
+    Walk
+}
+
 // controls
 ctrlKeys = 0
 ctrlKeys[k.Left ] = vk_left
@@ -46,7 +52,15 @@ ctrlKeys[k.Shoot] = vk_numpad0
 // pressed keys
 Keys = 0
 
-image_speed = 0.1
+dir = d.Down
+moveSpeed = 1
+
+pose = p.Stand
+
+// current walk speed
+walkX = 0
+walkY = 0
+
 
 </string>
           </argument>
@@ -101,8 +115,94 @@ Keys[k.Shoot] =  keyboard_check(ctrlKeys[k.Shoot])
             <kind>1</kind>
             <string>/// Control player
 
+if Keys[k.Left] {
+    dir = d.Left
+    walkX = -moveSpeed
+    walkY = 0
+} else
+if Keys[k.Right] {
+    dir = d.Right
+    walkX = moveSpeed
+    walkY = 0
+} else
+if Keys[k.Up] {
+    dir = d.Up
+    walkX = 0
+    walkY = -moveSpeed
+} else
+if Keys[k.Down] {
+    dir = d.Down
+    walkX = 0
+    walkY = moveSpeed
+} else {
+// no walk key presssed
+    walkX = 0
+    walkY = 0
+}
+
+// Set pose
+if (walkX = 0) and (walkY = 0) 
+    pose = p.Stand
+else
+    pose = p.Walk
+    
+
+// Set sprite        
+
+switch pose {
+case p.Stand:
+    image_speed = 0
+    image_index = 0
+    break
+case p.Walk:
+    image_speed = 0.2
+    break
+}
+
+switch dir {
+case d.Left:
+    sprite_index = sp_player_walk_lt
+    break
+case d.Right:
+    sprite_index = sp_player_walk_rt
+    break
+case d.Up:
+    sprite_index = sp_player_walk_up
+    break
+case d.Down:
+    sprite_index = sp_player_walk_dn
+    break
+}
+
+    
+    
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move player
+
+x += walkX
+y += walkY
+    
 </string>
           </argument>
         </arguments>
