@@ -5,10 +5,24 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>ob_isometric</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -70,6 +84,20 @@ weapon = noone
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -202,8 +230,8 @@ case d.Down:
             <kind>1</kind>
             <string>/// Move player
 
-x += walkX
-y += walkY
+X += walkX
+Y += walkY
     
 </string>
           </argument>
@@ -233,29 +261,30 @@ if instance_exists(weapon) {
     switch dir {
     case d.Left:
         _wx = -10
-        _wy = -3
-        _wd  = 0
+        _wy = 0
+//        _wd  = 0
         break;
     case d.Right:
         _wx = 10
-        _wy = -3
-        _wd  = 0
+        _wy = 0
+//        _wd  = 0
         break;
     case d.Up:
         _wx = 0
         _wy = -5
-        _wd  = 1
+//        _wd  = 1
         break;
     case d.Down:
         _wx = 0
-        _wy = 10
-        _wd  = -1
+        _wy = 5
+//        _wd  = -1
         break;
     }
     
-    weapon.x = x + _wx
-    weapon.y = y + _wy
-    weapon.depth = depth + _wd
+    weapon.X = X + _wx
+    weapon.Y = Y + _wy
+    weapon.Z = 5
+//    weapon.depth = depth + _wd
 }
 
 </string>

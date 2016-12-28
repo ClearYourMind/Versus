@@ -21,6 +21,7 @@
     <object>objects\ob_player</object>
     <object>objects\ob_player_2</object>
     <object>objects\ob_barrel</object>
+    <object>objects\ob_isometric</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>
