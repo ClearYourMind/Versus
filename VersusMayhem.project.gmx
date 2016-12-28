@@ -13,6 +13,7 @@
       <sprite>sprites\sp_player_walk_up</sprite>
     </sprites>
     <sprite>sprites\sp_barrel</sprite>
+    <sprite>sprites\sp_shadow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
