@@ -90,11 +90,11 @@ X += flyX
 Y += flyY
 Z += flyZ
 
-flyZ -= 0.2 // gravity
+flyZ -= grav // gravity
 
 if Z&lt;0 {
     instance_destroy()
-    sc_knock(X, Y, 30, 5)
+    sc_knock(X, Y, 50, 5)
 }    
 
 </string>

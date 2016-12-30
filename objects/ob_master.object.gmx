@@ -43,6 +43,8 @@ enum a {
     Shoot
 }
 
+globalvar grav;
+grav = 0.2
 
 </string>
           </argument>

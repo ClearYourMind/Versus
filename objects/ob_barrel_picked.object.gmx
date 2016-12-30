@@ -117,29 +117,26 @@ if instance_exists(owner) {
     case d.Left:
         _wx = -10
         _wy = 0
-//        _wd  = 0
         break;
     case d.Right:
         _wx = 10
         _wy = 0
-//        _wd  = 0
         break;
     case d.Up:
         _wx = 0
         _wy = -5
-//        _wd  = 1
         break;
     case d.Down:
         _wx = 0
         _wy = 5
-//        _wd  = -1
         break;
     }
     
     X = owner.X + _wx
     Y = owner.Y + _wy
-    Z = 5
-//    weapon.depth = depth + _wd
+    Z = owner.Z + 5
+    
+    isKnocked = false
 }
 
 </string>

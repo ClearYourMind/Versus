@@ -31,11 +31,13 @@ X = x
 Y = y
 Z = 0
 
+isKnocked = false
 // knock speed
-
 knockX = 0
 knockY = 0
 knockZ = 0
+
+knockDamp = 0.5
 
 
 </string>
@@ -60,7 +62,55 @@ knockZ = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process coordinates
+            <string>/// Process knock 
+
+if isKnocked {
+
+    X += knockX
+    Y += knockY
+    Z += knockZ
+    
+    knockZ -= grav
+    if Z&lt;0 {
+        Z = 0
+        knockZ = 0
+    }
+
+    if Z = 0 {
+        knockX *= knockDamp
+        knockY *= knockDamp
+    }    
+    
+    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  ((abs(knockZ)&lt;0.05) and (Z = 0)) {
+        knockX = 0
+        knockY = 0
+        knockZ = 0
+        isKnocked = false
+    }
+    
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Calculate coordinates
 
 depth = -Y
 
