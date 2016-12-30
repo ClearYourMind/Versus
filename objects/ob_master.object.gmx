@@ -36,6 +36,13 @@ enum k {
     Shoot = 5
 }
 
+// actions pickable
+enum a {
+    None,
+    Pick,
+    Shoot
+}
+
 
 </string>
           </argument>
