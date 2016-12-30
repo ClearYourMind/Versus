@@ -31,6 +31,11 @@ X = x
 Y = y
 Z = 0
 
+// knock speed
+
+knockX = 0
+knockY = 0
+knockZ = 0
 
 
 </string>

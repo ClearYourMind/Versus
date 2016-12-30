@@ -92,8 +92,10 @@ Z += flyZ
 
 flyZ -= 0.2 // gravity
 
-if Z&lt;0 
+if Z&lt;0 {
     instance_destroy()
+    sc_knock(X, Y, 30, 5)
+}    
 
 </string>
           </argument>

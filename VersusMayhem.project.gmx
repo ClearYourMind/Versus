@@ -18,7 +18,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\sc_pickable_pick.gml</script>
+    <script>scripts\sc_knock.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\ob_master</object>
