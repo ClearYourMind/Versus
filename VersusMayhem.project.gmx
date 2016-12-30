@@ -17,12 +17,22 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\sc_pickable_pick.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\ob_master</object>
     <object>objects\ob_player</object>
     <object>objects\ob_player_2</object>
-    <object>objects\ob_barrel</object>
-    <object>objects\ob_isometric</object>
+    <objects name="barrel">
+      <object>objects\ob_barrel_pickable</object>
+      <object>objects\ob_barrel_picked</object>
+    </objects>
+    <objects name="parent">
+      <object>objects\ob_pickable</object>
+      <object>objects\ob_picked</object>
+      <object>objects\ob_isometric</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>
