@@ -45,6 +45,8 @@ image_speed = 0
 
 obPicked = ob_barrel_picked
 
+owner = noone
+
 
 </string>
           </argument>
@@ -86,6 +88,7 @@ obPicked = ob_barrel_picked
 
 if action = a.Pick {
     action = a.None
+    instance_change(ob_barrel_picked, false)
     
 }
 

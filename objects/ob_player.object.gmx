@@ -237,60 +237,6 @@ Y += walkY
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Carry weapon
-
-var _wx, _xy, _wd;
-
-if instance_exists(weapon) {
-    switch dir {
-    case d.Left:
-        _wx = -10
-        _wy = 0
-//        _wd  = 0
-        break;
-    case d.Right:
-        _wx = 10
-        _wy = 0
-//        _wd  = 0
-        break;
-    case d.Up:
-        _wx = 0
-        _wy = -5
-//        _wd  = 1
-        break;
-    case d.Down:
-        _wx = 0
-        _wy = 5
-//        _wd  = -1
-        break;
-    }
-    
-    weapon.X = X + _wx
-    weapon.Y = Y + _wy
-    weapon.Z = 5
-//    weapon.depth = depth + _wd
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="4" ename="ob_barrel_pickable">
       <action>
@@ -314,6 +260,7 @@ if instance_exists(weapon) {
 if not instance_exists(weapon) {
     weapon = other.id
     weapon.action = a.Pick    
+    weapon.owner = id
 }
 </string>
           </argument>

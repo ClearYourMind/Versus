@@ -51,6 +51,76 @@ image_speed = 0
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Carry weapon
+
+var _wx, _xy, _wd;
+
+if instance_exists(owner) {
+    switch owner.dir {
+    case d.Left:
+        _wx = -10
+        _wy = 0
+//        _wd  = 0
+        break;
+    case d.Right:
+        _wx = 10
+        _wy = 0
+//        _wd  = 0
+        break;
+    case d.Up:
+        _wx = 0
+        _wy = -5
+//        _wd  = 1
+        break;
+    case d.Down:
+        _wx = 0
+        _wy = 5
+//        _wd  = -1
+        break;
+    }
+    
+    X = owner.X + _wx
+    Y = owner.Y + _wy
+    Z = 5
+//    weapon.depth = depth + _wd
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
