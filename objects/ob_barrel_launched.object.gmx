@@ -43,34 +43,10 @@
 
 image_speed = 0
 
+show_message( object_get_name(object_index) + " is Created!")
 
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Debug message
-
-show_message( object_get_name(object_index) + " is Destroyed!")
 
 </string>
           </argument>
@@ -108,90 +84,16 @@ show_message( object_get_name(object_index) + " is Destroyed!")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Carry weapon
+            <string>/// Process flying barrel
 
-var _wx, _xy, _wd;
+X += flyX
+Y += flyY
+Z += flyZ
 
-if instance_exists(owner) {
-    switch owner.dir {
-    case d.Left:
-        _wx = -10
-        _wy = 0
-//        _wd  = 0
-        break;
-    case d.Right:
-        _wx = 10
-        _wy = 0
-//        _wd  = 0
-        break;
-    case d.Up:
-        _wx = 0
-        _wy = -5
-//        _wd  = 1
-        break;
-    case d.Down:
-        _wx = 0
-        _wy = 5
-//        _wd  = -1
-        break;
-    }
-    
-    X = owner.X + _wx
-    Y = owner.Y + _wy
-    Z = 5
-//    weapon.depth = depth + _wd
-}
+flyZ -= 0.2 // gravity
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Process action
-
-if action = a.Shoot {
-    
-    action = a.None
-    owner.weapon = noone
-    
-    flyZ = 2
-    switch owner.dir {
-    case d.Left: 
-        flyX = -2
-        flyY = 0
-    break
-    case d.Right: 
-        flyX = 2
-        flyY = 0
-    break
-    case d.Up: 
-        flyX = 0
-        flyY = -2
-    break
-    case d.Down: 
-        flyX = 0
-        flyY = 2
-    break
-    }
-    
-    instance_change(ob_barrel_launched, false)
-    
-}
+if Z&lt;0 
+    instance_destroy()
 
 </string>
           </argument>

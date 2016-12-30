@@ -27,6 +27,7 @@
     <objects name="barrel">
       <object>objects\ob_barrel_pickable</object>
       <object>objects\ob_barrel_picked</object>
+      <object>objects\ob_barrel_launched</object>
     </objects>
     <objects name="parent">
       <object>objects\ob_pickable</object>

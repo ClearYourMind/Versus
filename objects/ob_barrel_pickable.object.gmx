@@ -43,8 +43,6 @@
 
 image_speed = 0
 
-obPicked = ob_barrel_picked
-
 owner = noone
 
 

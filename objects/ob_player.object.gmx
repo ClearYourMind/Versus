@@ -61,7 +61,7 @@ ctrlKeys[k.Left ] = vk_left
 ctrlKeys[k.Right] = vk_right
 ctrlKeys[k.Up   ] = vk_up
 ctrlKeys[k.Down ] = vk_down
-ctrlKeys[k.Shoot] = vk_numpad0
+ctrlKeys[k.Shoot] = vk_enter
 
 // pressed keys
 Keys = 0
@@ -170,6 +170,13 @@ if Keys[k.Down] {
     walkY = 0
 }
 
+
+if Keys[k.Shoot] {
+    if instance_exists(weapon)
+    if object_is_ancestor(weapon.object_index, ob_picked) 
+        weapon.action = a.Shoot
+}
+
 // Set pose
 if (walkX = 0) and (walkY = 0) 
     pose = p.Stand
@@ -238,7 +245,7 @@ Y += walkY
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="ob_barrel_pickable">
+    <event eventtype="4" ename="ob_pickable">
       <action>
         <libid>1</libid>
         <id>603</id>
