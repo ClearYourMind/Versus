@@ -41,6 +41,8 @@
             <kind>1</kind>
             <string>/// Init values
 
+isKnockable = true
+
 // directions
 enum d {  
     Left,

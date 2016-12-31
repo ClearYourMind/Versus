@@ -29,6 +29,6 @@ with _ob2 {
     var oz2 = Z+_h
 }
 
-return rectangle_in_rectangle(x1,y1,x2,y2,ox1,oy1,ox2,oy2) = 0 and (( oz1>z1 and oz1<z2) or (oz2>z1 and oz2<z2))
+return (rectangle_in_rectangle(x1,y1,x2,y2,ox1,oy1,ox2,oy2) != 0) and (( oz1>z1 and oz1<z2) or (oz2>z1 and oz2<z2))
 
 
