@@ -32,6 +32,7 @@ Y = y
 Z = 0
 
 isKnocked = false
+isKnockable = false
 // knock speed
 knockX = 0
 knockY = 0

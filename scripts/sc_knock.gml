@@ -8,6 +8,7 @@ var _p = argument3
 
 with ob_isometric {
     var _d = point_distance(x, y, _x, _y)
+    if isKnockable 
     if _d < _r {
         isKnocked = true
         var _a = degtorad(360-point_direction(x, y, _x, _y) )
