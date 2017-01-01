@@ -116,14 +116,14 @@ if instance_exists(owner) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process action
+            <string>/// action a.Shoot
 
 if action = a.Shoot {
     
     action = a.None
     owner.weapon = noone
     
-    flyZ = 2
+    flyZ = 5
     switch owner.dir {
     case d.Left: 
         flyX = -2

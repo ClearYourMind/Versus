@@ -109,7 +109,7 @@ sc_knock(x, y, 30, 3)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process actions
+            <string>/// Action a.Pick
 
 if action = a.Pick
 if not isKnocked {

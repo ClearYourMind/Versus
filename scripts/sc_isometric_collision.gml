@@ -4,26 +4,24 @@ var _ob1 = argument0
 var _ob2 = argument1
 
 with _ob1 {
-    var _w = sprite_width*0.5
-    var x1 = X-_w
-    var x2 = X+_w
+    var x1 = bbox_left
+    var x2 = bbox_right
     
-    var _h = sprite_height*0.5
-    var y1 = Y-_h
-    var y2 = Y+_h
+    var _h = (bbox_bottom-bbox_top)*0.5
+    var y1 = bbox_top
+    var y2 = bbox_bottom
     
     var z1 = Z-_h
     var z2 = Z+_h
 }
 
 with _ob2 {
-    var _w = sprite_width*0.5
-    var ox1 = X-_w
-    var ox2 = X+_w
+    var ox1 = bbox_left
+    var ox2 = bbox_right
     
-    var _h = sprite_height*0.5
-    var oy1 = Y-_h
-    var oy2 = Y+_h
+    var _h = (bbox_bottom-bbox_top)*0.5
+    var oy1 = bbox_top
+    var oy2 = bbox_bottom
     
     var oz1 = Z-_h
     var oz2 = Z+_h
