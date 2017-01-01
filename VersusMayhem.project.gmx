@@ -15,6 +15,7 @@
     <sprite>sprites\sp_barrel</sprite>
     <sprite>sprites\sp_shadow</sprite>
     <sprite>sprites\sp_explosion</sprite>
+    <sprite>sprites\sp_wall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +39,7 @@
       <object>objects\ob_isometric</object>
     </objects>
     <object>objects\ob_explosion</object>
+    <object>objects\ob_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>

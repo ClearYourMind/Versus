@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>50</speed>
   <persistent>0</persistent>
-  <colour>32768</colour>
+  <colour>4737096</colour>
   <showcolour>-1</showcolour>
   <code>application_surface_enable(false)</code>
   <enableViews>-1</enableViews>
@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>-156</xoffset>
-    <yoffset>-92</yoffset>
+    <page>0</page>
+    <xoffset>-223</xoffset>
+    <yoffset>-70</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -130,6 +130,11 @@
     <instance objName="ob_barrel_pickable" x="336" y="216" name="inst_9C9C8BBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="336" y="240" name="inst_4DDA9E33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="312" y="240" name="inst_00AA7BDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="144" y="240" name="inst_EE28EF80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="168" y="240" name="inst_A78BEE4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="192" y="240" name="inst_62A3DEEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="240" y="240" name="inst_912397C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="216" y="240" name="inst_F99D57C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
