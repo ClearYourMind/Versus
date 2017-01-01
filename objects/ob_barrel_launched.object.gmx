@@ -72,20 +72,17 @@ with parentClass
             <kind>1</kind>
             <string>/// Process flying barrel
 
-X += flyX
-Y += flyY
-Z += flyZ
-
 flyZ -= grav // gravity
 
-if Z&lt;0 {
-    Z = 0
+if isLanded {
     flyZ = -flyZ * 0.75
     if not isDetonated
         action = a.Detonate
 }    
 
-
+dX += flyX
+dY += flyY
+dZ += flyZ
 
 
 </string>

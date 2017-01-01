@@ -239,8 +239,8 @@ case d.Down:
             <kind>1</kind>
             <string>/// Move player
 
-X += walkX
-Y += walkY
+dX += walkX
+dY += walkY
     
 </string>
           </argument>

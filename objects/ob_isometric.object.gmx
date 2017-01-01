@@ -31,6 +31,12 @@ X = x
 Y = y
 Z = 0
 
+dX = 0
+dY = 0
+dZ = 0
+
+isLanded = true
+
 isKnocked = false
 isKnockable = false
 // knock speed
@@ -65,33 +71,29 @@ collidedWith = noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process knock 
+            <string>/// Calculate coordinates and speeds
 
-if isKnocked {
+X += dX
+Y += dY
+Z += dZ
 
-    X += knockX
-    Y += knockY
-    Z += knockZ
-    
-    knockZ -= grav
-    if Z&lt;0 {
-        Z = 0
-        knockZ = 0
-    }
+if Z &lt;= 0 {
+    Z = 0
+    isLanded = true
+} else
+    isLanded = false
 
-    if Z = 0 {
-        knockX *= knockDamp
-        knockY *= knockDamp
-    }    
-    
-    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  ((abs(knockZ)&lt;0.05) and (Z = 0)) {
-        knockX = 0
-        knockY = 0
-        knockZ = 0
-        isKnocked = false
-    }
-    
-}
+dX = 0
+dY = 0
+dZ = 0
+
+
+depth = -Y
+
+x = X
+y = Y - Z
+
+
 
 </string>
           </argument>
@@ -113,14 +115,32 @@ if isKnocked {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Calculate coordinates
+            <string>/// Process knock 
 
-depth = -Y
+if isKnocked {
 
-x = X
-y = Y - Z
+    knockZ -= grav
+    if Z &lt; 0 {
+        knockZ = 0
+    }
 
+    if isLanded {
+        knockX *= knockDamp
+        knockY *= knockDamp
+    }    
+    
+    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  ((abs(knockZ)&lt;0.05) and isLanded) {
+        knockX = 0
+        knockY = 0
+        knockZ = 0
+        isKnocked = false
+    }
+   
+}
 
+dX += knockX
+dY += knockY
+dZ += knockZ
 
 </string>
           </argument>
