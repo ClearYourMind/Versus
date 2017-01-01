@@ -40,7 +40,8 @@ enum k {
 enum a {
     None,
     Pick,
-    Shoot
+    Shoot,
+    Detonate
 }
 
 globalvar grav;
