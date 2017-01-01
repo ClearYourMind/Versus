@@ -48,7 +48,7 @@ owner = noone
 isKnockable = true
 isDetonated = false
 
-parentClass = instance_create(0,0, ob_barrel_)
+parentClass = instance_create(0, 0, ob_barrel_)
 
 </string>
           </argument>
