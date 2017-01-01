@@ -33,6 +33,9 @@ isKnocked = false
 
 action = a.None
 
+X = 0
+Y = 0
+
 </string>
           </argument>
         </arguments>
@@ -49,15 +52,15 @@ action = a.None
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
             <string>/// Destroy
-
-sc_knock(x, y, 30, 3)
+with other
+    sc_knock(X, Y, 30, 3)
 
 </string>
           </argument>

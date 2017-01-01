@@ -79,8 +79,10 @@ Z += flyZ
 flyZ -= grav // gravity
 
 if Z&lt;0 {
-    instance_destroy()
-    exit
+    Z = 0
+    flyZ = -flyZ * 0.75
+    if not isDetonated
+        action = a.Detonate
 }    
 
 

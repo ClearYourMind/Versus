@@ -72,6 +72,35 @@ with parentClass
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Run parentClass code
+
+// Set action = a.Detonate when isKnocked
+// Action a.Detonate
+
+with parentClass {
+    event_perform(ev_step, ev_step_normal)
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Carry weapon
 
 var _wx, _xy, _wd;
@@ -130,7 +159,7 @@ if action = a.Shoot {
     action = a.None
     owner.weapon = noone
     
-    flyZ = 5
+    flyZ = 3
     switch owner.dir {
     case d.Left: 
         flyX = -2
@@ -152,35 +181,6 @@ if action = a.Shoot {
     
     instance_change(ob_barrel_launched, false)
     
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Run parentClass code
-
-// Set action = a.Detonate when isKnocked
-// Action a.Detonate
-
-with parentClass {
-    event_perform(ev_step, ev_step_normal)
 }
 
 </string>
