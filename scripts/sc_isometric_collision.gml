@@ -7,10 +7,10 @@ with _ob1 {
     var x1 = bbox_left  + dX
     var x2 = bbox_right + dX
     
-    var _h = (bbox_bottom-bbox_top)*0.5
     var y1 = bbox_top    + dY
     var y2 = bbox_bottom + dY
     
+    var _h = (bbox_bottom-bbox_top)*0.5
     var z1 = (Z-_h) + dZ
     var z2 = (Z+_h) + dZ
 }
@@ -19,10 +19,10 @@ with _ob2 {
     var ox1 = bbox_left  + dX
     var ox2 = bbox_right + dX
     
-    var _h = (bbox_bottom-bbox_top)*0.5
     var oy1 = bbox_top    + dY
     var oy2 = bbox_bottom + dY
     
+    var _h = (bbox_bottom-bbox_top)*0.5
     var oz1 = (Z-_h) + dZ
     var oz2 = (Z+_h) + dZ
 }
