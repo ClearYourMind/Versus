@@ -33,8 +33,8 @@ isKnocked = false
 
 action = a.None
 
-X = 0
-Y = 0
+X = -99
+Y = -99
 
 </string>
           </argument>
@@ -59,8 +59,12 @@ Y = 0
           <argument>
             <kind>1</kind>
             <string>/// Destroy
-with other
+
+with other {
     sc_knock(X, Y, 30, 3)
+    instance_create(X, Y, ob_explosion)
+    
+}
 
 </string>
           </argument>
