@@ -21,5 +21,7 @@
   <height>24</height>
   <frames>
     <frame index="0">images\sp_barrel_0.png</frame>
+    <frame index="1">images\sp_barrel_1.png</frame>
+    <frame index="2">images\sp_barrel_2.png</frame>
   </frames>
 </sprite>
