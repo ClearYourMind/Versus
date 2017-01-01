@@ -25,9 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Destroy
+            <string>/// Run parentClass code
 
-sc_knock(x, y, 30, 3)
+with parentClass {
+    event_perform(ev_destroy, 0)    
+}
+
+with parentClass
+    instance_destroy()
 
 </string>
           </argument>
@@ -90,6 +95,63 @@ with ob_player {
 }
 
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Run parentClass code
+
+// Set action = a.Detonate when isKnocked
+// Action a.Detonate
+
+with parentClass {
+    event_perform(ev_step, ev_step_normal)
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Run parentClass code
+
+with parentClass {
+    event_perform(ev_other, ev_animation_end)
+}
 
 </string>
           </argument>
