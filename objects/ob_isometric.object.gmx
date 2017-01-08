@@ -55,6 +55,8 @@ knockDamp = 0.5
 
 
 collidedWith = noone
+collidedX = false
+collidedY = false
 
 </string>
           </argument>
@@ -104,14 +106,15 @@ image_blend = c_white
             <kind>1</kind>
             <string>/// Bounce (Check collision)
 
-var _ok = false
 
 collidedWith = noone
+collidedX = false
+collidedY = false
 
 if dX&lt;&gt;0 or dY&lt;&gt;0
 with ob_isometric {
-    if other.id != id
-    if not object_is_ancestor(id.object_index, ob_picked) and not object_is_ancestor(other.id.object_index, ob_picked)
+//    if other.id != id
+//    if not object_is_ancestor(id.object_index, ob_picked) and not object_is_ancestor(other.id.object_index, ob_picked)
 //    if other.isKnockable
     {
         if sc_isometric_collision(other.id, id) {
@@ -122,26 +125,25 @@ with ob_isometric {
         other.X += other.dX
         if sc_isometric_collision(other.id, id) {
             // horiz collision
-            other.X -= other.dX
+            other.X -= other.dX * 2
             other.dX = 0
-            _ok = true
-            id.image_blend = c_lime
+            other.collidedX = true
         }
         other.Y += other.dY
         if sc_isometric_collision(other.id, id) {
             // vert collision
-            other.Y -= other.dY
+            other.Y -= other.dY * 2
             other.dY = 0
-            if not _ok {
-                _ok = true
-                id.image_blend = c_fuchsia
-            }
+            other.collidedY = true
         }
        // collision found
         other.X -= other.dX
         other.Y -= other.dY
-        if _ok {
+        if other.collidedX or other.collidedY {
             other.collidedWith = id
+            if other.collidedX id.image_blend = c_lime
+            if other.collidedY id.image_blend = c_fuchsia
+
             break
         }
     }
@@ -238,53 +240,6 @@ if isKnocked {
 dX += knockX
 dY += knockY
 dZ += knockZ
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>425</id>
-        <kind>4</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Check collision
-
-collidedWith = noone
-
-with ob_isometric {
-    if other.id != id
-    if sc_isometric_collision(other.id, id) {
-        other.collidedWith = id
-        break
-    }
-    
-}
 
 </string>
           </argument>

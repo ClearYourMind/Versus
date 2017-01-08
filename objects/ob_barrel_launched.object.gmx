@@ -80,6 +80,11 @@ if isLanded {
         action = a.Detonate
 }    
 
+if collidedX
+    flyX = -flyX
+if collidedY
+    flyY = -flyY
+
 dX += flyX
 dY += flyY
 dZ += flyZ
