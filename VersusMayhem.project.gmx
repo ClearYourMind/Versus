@@ -22,6 +22,7 @@
   <scripts name="scripts">
     <script>scripts\sc_knock.gml</script>
     <script>scripts\sc_isometric_collision.gml</script>
+    <script>scripts\sc_isometric_collision_.gml</script>
     <script>scripts\sc_bounce.gml</script>
   </scripts>
   <objects name="objects">

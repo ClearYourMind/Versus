@@ -71,6 +71,30 @@ collidedWith = noone
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// image_blend = c_white
+
+image_blend = c_white
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Check collision
 
 collidedWith = noone
@@ -105,13 +129,46 @@ with ob_isometric {
           <argument>
             <kind>1</kind>
             <string>/// Bounce
-/*
-if instance_exists(collidedWith)
-if not object_is_ancestor(collidedWith.object_index, ob_picked) and
-   not object_is_ancestor(object_index, ob_picked) 
-    sc_bounce(id, collidedWith.id)
 
-*/
+var _ok = false
+
+with ob_isometric {
+    if other.id != id
+    if not object_is_ancestor(id.object_index, ob_picked) and not object_is_ancestor(other.id.object_index, ob_picked)
+//    if other.isKnockable
+    {
+        if sc_isometric_collision(other.id, id) {
+            id.image_blend = c_red
+            other.image_blend = c_red
+            break
+        }
+/*        other.X += other.dX
+        if sc_isometric_collision(other.id, id) {
+            // horiz collision
+            other.X -= other.dX
+            other.dX = 0
+            _ok = true
+            id.image_blend = c_lime
+        }
+        other.Y += other.dY
+        if sc_isometric_collision(other.id, id) {
+            // vert collision
+            other.Y -= other.dY
+            other.dY = 0
+            if not _ok {
+                _ok = true
+                id.image_blend = c_fuchsia
+            }
+        }
+       // collision found
+        other.X -= other.dX
+        other.Y -= other.dY
+        if _ok {
+            break
+        } */
+    }
+    
+}
 
 </string>
           </argument>
@@ -207,6 +264,20 @@ dZ += knockZ
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>425</id>
+        <kind>4</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
