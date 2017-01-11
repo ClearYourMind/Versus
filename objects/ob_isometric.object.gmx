@@ -113,26 +113,27 @@ collidedY = false
 
 if dX&lt;&gt;0 or dY&lt;&gt;0
 with ob_isometric {
-//    if other.id != id
-//    if not object_is_ancestor(id.object_index, ob_picked) and not object_is_ancestor(other.id.object_index, ob_picked)
+//    if (object_index = ob_wall) and (other.object_index = ob_player)
+    if other.id != id
+    if not object_is_ancestor(object_index, ob_picked) and not object_is_ancestor(other.object_index, ob_picked)
 //    if other.isKnockable
     {
         if sc_isometric_collision(other.id, id) {
             id.image_blend = c_red
             other.image_blend = c_red
-            break
+//            break
         }
-        other.X += other.dX
+        other.X += other.dX  
         if sc_isometric_collision(other.id, id) {
             // horiz collision
-            other.X -= other.dX * 2
+            other.X -= other.dX 
             other.dX = 0
             other.collidedX = true
         }
-        other.Y += other.dY
+        other.Y += other.dY 
         if sc_isometric_collision(other.id, id) {
             // vert collision
-            other.Y -= other.dY * 2
+            other.Y -= other.dY 
             other.dY = 0
             other.collidedY = true
         }

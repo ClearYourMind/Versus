@@ -27,8 +27,8 @@
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>1</page>
-    <xoffset>-610</xoffset>
-    <yoffset>-351</yoffset>
+    <xoffset>30</xoffset>
+    <yoffset>29</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="ob_master" x="0" y="0" name="inst_E92FC38B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_player" x="156" y="229" name="inst_FD0D5E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_player" x="144" y="168" name="inst_FD0D5E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_player_2" x="240" y="72" name="inst_83374955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="120" y="24" name="inst_B1E32A22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="96" y="96" name="inst_9CBEDDC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

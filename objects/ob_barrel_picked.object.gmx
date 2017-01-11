@@ -179,6 +179,9 @@ if action = a.Shoot {
     break
     }
     
+    X += flyX
+    Y += flyY
+    
     instance_change(ob_barrel_launched, false)
     
 }
