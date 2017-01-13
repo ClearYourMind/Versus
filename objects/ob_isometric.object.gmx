@@ -121,7 +121,8 @@ with ob_isometric {
         if sc_isometric_collision(other.id, id) {
             id.image_blend = c_red
             other.image_blend = c_red
-//            break
+            other.collidedWith = id
+            break
         }
         other.X += other.dX  
         if sc_isometric_collision(other.id, id) {
@@ -226,25 +227,38 @@ if isKnocked {
     if Z &lt; 0 {
         knockZ = 0
     }
-
+    
     if isLanded {
         knockX *= knockDamp
         knockY *= knockDamp
     }    
     
-    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  ((abs(knockZ)&lt;0.05) and isLanded) {
+    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  isLanded {
         knockX = 0
         knockY = 0
         knockZ = 0
         isKnocked = false
     }
-   
 }
 
 dX += knockX
 dY += knockY
 dZ += knockZ
 
+
+
+/*
+if isKnocked
+    image_blend = c_yellow
+else
+    image_blend = c_white
+/*
+if isLanded
+    image_blend = c_orange
+else
+    image_blend = c_white
+
+*/
 </string>
           </argument>
         </arguments>
