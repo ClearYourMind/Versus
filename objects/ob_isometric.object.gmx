@@ -126,25 +126,28 @@ with ob_isometric {
         other.X += other.dX  
         if sc_isometric_collision(other.id, id) {
             // horiz collision
+            other.collidedX = true
+            id.image_blend = c_lime
+            if isKnockable
+                dX+=other.dX
             other.X -= other.dX 
             other.dX = 0
-            other.collidedX = true
         }
         other.Y += other.dY 
         if sc_isometric_collision(other.id, id) {
             // vert collision
-            other.Y -= other.dY 
-            other.dY = 0
             other.collidedY = true
+            id.image_blend = c_fuchsia
+            if isKnockable
+                dY+=other.dY
+            other.Y -= other.dY
+            other.dY = 0
         }
        // collision found
         other.X -= other.dX
         other.Y -= other.dY
         if other.collidedX or other.collidedY {
             other.collidedWith = id
-            if other.collidedX id.image_blend = c_lime
-            if other.collidedY id.image_blend = c_fuchsia
-
             break
         }
     }

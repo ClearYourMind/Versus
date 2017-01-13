@@ -298,6 +298,7 @@ if object_is_ancestor(collidedWith.object_index, ob_pickable) {
             <string>/// Pick up
 //    show_message("player gets barrel")
 
+if instance_exists(collidedWith)
 if not instance_exists(weapon) {
     weapon = collidedWith
     weapon.action = a.Pick    
