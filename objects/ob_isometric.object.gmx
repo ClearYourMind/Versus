@@ -31,6 +31,7 @@ X = x
 Y = y
 Z = 0
 
+// cumulative speeds, persists only for 1 frame
 dX = 0
 dY = 0
 dZ = 0
@@ -57,6 +58,7 @@ knockDamp = 0.5
 collidedWith = noone
 collidedX = false
 collidedY = false
+collidedZ = false
 
 </string>
           </argument>
@@ -110,6 +112,8 @@ image_blend = c_white
 collidedWith = noone
 collidedX = false
 collidedY = false
+collidedZ = false
+isLanded = false
 
 if dX&lt;&gt;0 or dY&lt;&gt;0
 with ob_isometric {
@@ -122,9 +126,9 @@ with ob_isometric {
             id.image_blend = c_red
             other.image_blend = c_red
             other.collidedWith = id
-            break
         }
         other.X += other.dX  
+        if not instance_exists(other.collidedWith)
         if sc_isometric_collision(other.id, id) {
             // horiz collision
             other.collidedX = true
@@ -135,6 +139,7 @@ with ob_isometric {
             other.dX = 0
         }
         other.Y += other.dY 
+        if not instance_exists(other.collidedWith)
         if sc_isometric_collision(other.id, id) {
             // vert collision
             other.collidedY = true
@@ -144,10 +149,22 @@ with ob_isometric {
             other.Y -= other.dY
             other.dY = 0
         }
+        other.Z += other.dZ 
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // Z collision
+            other.collidedZ = true
+            id.image_blend = c_aqua
+//            dY+=other.dY
+            other.Z -= other.dZ
+            other.dZ = 0
+            other.isLanded = true
+        }
        // collision found
         other.X -= other.dX
         other.Y -= other.dY
-        if other.collidedX or other.collidedY {
+        other.Z -= other.dZ 
+        if other.collidedX or other.collidedY or other.collidedZ {
             other.collidedWith = id
             break
         }
@@ -184,8 +201,9 @@ Z += dZ
 if Z &lt;= 0 {
     Z = 0
     isLanded = true
-} else
-    isLanded = false
+}
+// else
+//    isLanded = false
 
 dX = 0
 dY = 0
