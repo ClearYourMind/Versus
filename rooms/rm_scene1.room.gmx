@@ -3,14 +3,14 @@
   <caption></caption>
   <width>480</width>
   <height>300</height>
-  <vsnap>24</vsnap>
-  <hsnap>24</hsnap>
+  <vsnap>12</vsnap>
+  <hsnap>12</hsnap>
   <isometric>0</isometric>
   <speed>50</speed>
   <persistent>0</persistent>
-  <colour>32768</colour>
+  <colour>4737096</colour>
   <showcolour>-1</showcolour>
-  <code>application_surface_enable(false)</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>-156</xoffset>
-    <yoffset>-92</yoffset>
+    <page>0</page>
+    <xoffset>463</xoffset>
+    <yoffset>154</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -52,19 +52,19 @@
   </views>
   <instances>
     <instance objName="ob_master" x="0" y="0" name="inst_E92FC38B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_player" x="48" y="72" name="inst_FD0D5E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_player" x="312" y="144" name="inst_FD0D5E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_player_2" x="240" y="72" name="inst_83374955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="120" y="24" name="inst_B1E32A22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="96" y="96" name="inst_9CBEDDC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="120" y="192" name="inst_4277DDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="72" y="240" name="inst_9CBEDDC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="24" y="192" name="inst_4277DDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="192" y="120" name="inst_B9DA2C82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="216" y="120" name="inst_2F3A4EA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="240" y="120" name="inst_A59DB036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="264" y="120" name="inst_0188DCBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="120" name="inst_A59DB036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="192" y="96" name="inst_0188DCBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="192" y="144" name="inst_3BCC098A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="216" y="144" name="inst_61CE654E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="240" y="144" name="inst_731687A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="264" y="144" name="inst_E5B7B3DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="144" name="inst_E5B7B3DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="192" y="192" name="inst_EB8969C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="216" y="192" name="inst_C40CFC5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="240" y="192" name="inst_D801DE10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -72,25 +72,25 @@
     <instance objName="ob_barrel_pickable" x="360" y="24" name="inst_0DAC8A1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="336" y="48" name="inst_993C0CC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="360" y="48" name="inst_972CE5F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="384" y="216" name="inst_47991269" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="192" y="216" name="inst_47991269" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="336" y="24" name="inst_DA3CD511" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="48" y="216" name="inst_EA2E528E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="72" y="192" name="inst_2A5C935D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="96" y="120" name="inst_0D7AFEDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="120" y="96" name="inst_746F8E1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="72" y="264" name="inst_0D7AFEDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="72" name="inst_746F8E1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="72" y="216" name="inst_54A9132D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="120" y="120" name="inst_E1592430" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="96" y="240" name="inst_E1592430" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="24" y="240" name="inst_CF0AB8C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="48" y="264" name="inst_293F1628" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="96" y="216" name="inst_A2FD8F72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="24" y="264" name="inst_878638EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="120" y="216" name="inst_BCB45042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="24" y="216" name="inst_BCB45042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="96" y="192" name="inst_88A904DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="48" y="240" name="inst_C0DEE9DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="48" y="192" name="inst_7E2D457D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="408" y="192" name="inst_ABD95B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="384" y="192" name="inst_54AFE3F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="408" y="216" name="inst_332A6871" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="264" y="216" name="inst_ABD95B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="216" name="inst_54AFE3F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="384" y="216" name="inst_332A6871" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="96" y="48" name="inst_330717B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="96" y="24" name="inst_9B0E0791" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="120" y="48" name="inst_3772209E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -102,18 +102,18 @@
     <instance objName="ob_barrel_pickable" x="456" y="120" name="inst_9D04160D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="456" y="144" name="inst_76916B82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="432" y="144" name="inst_A8EA356A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="432" y="192" name="inst_B6F65EF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="456" y="192" name="inst_E9A9BEDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="456" y="216" name="inst_0E20139B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="432" y="216" name="inst_F10410F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="384" y="240" name="inst_3C9335D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="408" y="240" name="inst_4A04CBDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="408" y="264" name="inst_77DA854F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="384" y="264" name="inst_853F6E25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="432" y="240" name="inst_C8F1593F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="456" y="240" name="inst_06A4EC4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="456" y="264" name="inst_AD6786A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="432" y="264" name="inst_41F90D26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="288" y="216" name="inst_B6F65EF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="312" y="216" name="inst_E9A9BEDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="408" y="216" name="inst_0E20139B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="396" y="264" name="inst_F10410F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="216" y="216" name="inst_3C9335D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="396" y="216" name="inst_4A04CBDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="396" y="240" name="inst_77DA854F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="240" y="216" name="inst_853F6E25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="408" y="240" name="inst_C8F1593F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="420" y="240" name="inst_06A4EC4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="420" y="264" name="inst_AD6786A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="408" y="264" name="inst_41F90D26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="360" y="120" name="inst_FCAD5DD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="384" y="120" name="inst_9879CC50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="384" y="144" name="inst_A22406AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -126,10 +126,48 @@
     <instance objName="ob_barrel_pickable" x="312" y="24" name="inst_CE7BF139" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="312" y="48" name="inst_82C623F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_barrel_pickable" x="288" y="48" name="inst_1BA0A3F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="312" y="216" name="inst_C519F968" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="336" y="216" name="inst_9C9C8BBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="336" y="240" name="inst_4DDA9E33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ob_barrel_pickable" x="312" y="240" name="inst_00AA7BDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="192" name="inst_C519F968" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="168" name="inst_9C9C8BBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="288" y="192" name="inst_4DDA9E33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="168" y="96" name="inst_00AA7BDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="144" y="240" name="inst_EE28EF80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="168" y="240" name="inst_A78BEE4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="192" y="240" name="inst_62A3DEEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="240" y="240" name="inst_912397C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="216" y="240" name="inst_F99D57C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="120" y="216" name="inst_32685EB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="120" y="192" name="inst_7162FF3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="120" y="168" name="inst_BC02C3A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="120" y="144" name="inst_EF55FFCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="264" y="240" name="inst_427A1C22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="120" y="120" name="inst_D1DF6C83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="144" y="216" name="inst_6321127C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="372" y="192" name="inst_2658F683" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="360" y="216" name="inst_322A9F75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="360" y="240" name="inst_D13A0ED3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="360" y="264" name="inst_7CAB0B32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="372" y="288" name="inst_2FCD4517" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="396" y="288" name="inst_E913ED1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="444" y="288" name="inst_883F71D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="468" y="288" name="inst_0C373659" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="480" y="264" name="inst_FAD67FBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="480" y="240" name="inst_D5654140" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="480" y="216" name="inst_32FFBDF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="468" y="192" name="inst_0385E67E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="396" y="192" name="inst_F2E6A0A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_wall" x="444" y="192" name="inst_D1E0E1E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="384" y="240" name="inst_55141C66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="384" y="264" name="inst_B244FD2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="420" y="216" name="inst_34B9C332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="432" y="216" name="inst_F396B571" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="432" y="240" name="inst_4F55FFCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="432" y="264" name="inst_52A89C58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="444" y="216" name="inst_12924A90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="444" y="240" name="inst_0437FB40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="444" y="264" name="inst_1674A0F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="456" y="216" name="inst_AC7A7B19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="456" y="240" name="inst_C413CFA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_barrel_pickable" x="456" y="264" name="inst_FEAFADB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>ob_picked</parentName>
+  <parentName>ob_isometric</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="1" enumb="0">
@@ -72,31 +72,53 @@ with parentClass
             <kind>1</kind>
             <string>/// Process flying barrel
 
-X += flyX
-Y += flyY
-Z += flyZ
-
 flyZ -= grav // gravity
 
-if Z&lt;0 {
-    Z = 0
+if isLanded {
     flyZ = -flyZ * 0.75
     if not isDetonated
         action = a.Detonate
 }    
 
+if collidedX
+    flyX = -flyX
+if collidedY
+    flyY = -flyY
 
-/// Check collision with player
+dX += flyX
+dY += flyY
+dZ += flyZ
 
-with ob_player {
-    if sc_isometric_collision(id, other.id)
-    if id != other.owner.id {
-        with other instance_destroy()
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check collision with player
+
+if instance_exists(collidedWith) 
+if object_is_ancestor(collidedWith.object_index, ob_player) or (collidedWith.object_index = ob_player) {
+    if collidedWith.id != owner.id {
+        instance_destroy()
         exit
     }
 }
-
-
 
 </string>
           </argument>

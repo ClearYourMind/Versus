@@ -31,6 +31,20 @@ X = x
 Y = y
 Z = 0
 
+// cumulative speeds, persists only for 1 frame
+dX = 0
+dY = 0
+dZ = 0
+
+// for collision
+w1 = bbox_left   - x
+w2 = bbox_right  - x
+h1 = bbox_top    - y
+h2 = bbox_bottom - y
+
+
+isLanded = true
+
 isKnocked = false
 isKnockable = false
 // knock speed
@@ -40,6 +54,11 @@ knockZ = 0
 
 knockDamp = 0.5
 
+
+collidedWith = noone
+collidedX = false
+collidedY = false
+collidedZ = false
 
 </string>
           </argument>
@@ -63,30 +82,92 @@ knockDamp = 0.5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process knock 
+            <string>/// image_blend = c_white
 
-if isKnocked {
+image_blend = c_white
 
-    X += knockX
-    Y += knockY
-    Z += knockZ
-    
-    knockZ -= grav
-    if Z&lt;0 {
-        Z = 0
-        knockZ = 0
-    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Bounce (Check collision)
 
-    if Z = 0 {
-        knockX *= knockDamp
-        knockY *= knockDamp
-    }    
-    
-    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  ((abs(knockZ)&lt;0.05) and (Z = 0)) {
-        knockX = 0
-        knockY = 0
-        knockZ = 0
-        isKnocked = false
+
+collidedWith = noone
+collidedX = false
+collidedY = false
+collidedZ = false
+isLanded = false
+
+if dX&lt;&gt;0 or dY&lt;&gt;0
+with ob_isometric {
+//    if (object_index = ob_wall) and (other.object_index = ob_player)
+    if other.id != id
+    if not object_is_ancestor(object_index, ob_picked) and not object_is_ancestor(other.object_index, ob_picked)
+//    if other.isKnockable
+    {
+        if sc_isometric_collision(other.id, id) {
+            id.image_blend = c_red
+            other.image_blend = c_red
+            other.collidedWith = id
+        }
+        other.X += other.dX  
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // horiz collision
+            other.collidedX = true
+            id.image_blend = c_lime
+            if isKnockable
+                dX+=other.dX
+            other.X -= other.dX 
+            other.dX = 0
+        }
+        other.Y += other.dY 
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // vert collision
+            other.collidedY = true
+            id.image_blend = c_fuchsia
+            if isKnockable
+                dY+=other.dY
+            other.Y -= other.dY
+            other.dY = 0
+        }
+        other.Z += other.dZ 
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // Z collision
+            other.collidedZ = true
+            id.image_blend = c_aqua
+//            dY+=other.dY
+            other.Z -= other.dZ
+            other.dZ = 0
+            other.isLanded = true
+        }
+       // collision found
+        other.X -= other.dX
+        other.Y -= other.dY
+        other.Z -= other.dZ 
+        if other.collidedX or other.collidedY or other.collidedZ {
+            other.collidedWith = id
+            break
+        }
     }
     
 }
@@ -111,7 +192,23 @@ if isKnocked {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Calculate coordinates
+            <string>/// Calculate coordinates and speeds
+
+X += dX
+Y += dY
+Z += dZ
+
+if Z &lt;= 0 {
+    Z = 0
+    isLanded = true
+}
+// else
+//    isLanded = false
+
+dX = 0
+dY = 0
+dZ = 0
+
 
 depth = -Y
 
@@ -120,6 +217,66 @@ y = Y - Z
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Process knock 
+
+if isKnocked {
+
+    knockZ -= grav
+    if Z &lt; 0 {
+        knockZ = 0
+    }
+    
+    if isLanded {
+        knockX *= knockDamp
+        knockY *= knockDamp
+    }    
+    
+    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  isLanded {
+        knockX = 0
+        knockY = 0
+        knockZ = 0
+        isKnocked = false
+    }
+}
+
+dX += knockX
+dY += knockY
+dZ += knockZ
+
+
+
+/*
+if isKnocked
+    image_blend = c_yellow
+else
+    image_blend = c_white
+/*
+if isLanded
+    image_blend = c_orange
+else
+    image_blend = c_white
+
+*/
 </string>
           </argument>
         </arguments>

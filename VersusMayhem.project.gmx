@@ -15,6 +15,7 @@
     <sprite>sprites\sp_barrel</sprite>
     <sprite>sprites\sp_shadow</sprite>
     <sprite>sprites\sp_explosion</sprite>
+    <sprite>sprites\sp_wall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +25,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\ob_master</object>
+    <object>objects\ob_wall</object>
     <object>objects\ob_player</object>
     <object>objects\ob_player_2</object>
     <objects name="barrel">
@@ -41,6 +43,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_scene1</room>
+    <room>rooms\rm_scene1_eco</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

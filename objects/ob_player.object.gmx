@@ -239,9 +239,40 @@ case d.Down:
             <kind>1</kind>
             <string>/// Move player
 
-X += walkX
-Y += walkY
+if not collidedX
+ dX += walkX
+ 
+if not collidedY
+ dY += walkY
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check collision with ob_pickable
+
+if instance_exists(collidedWith)
+if object_is_ancestor(collidedWith.object_index, ob_pickable) {
+//    show_message("player hits the wall")
+    event_perform(ev_collision, ob_pickable)
+}
+
 </string>
           </argument>
         </arguments>
@@ -265,9 +296,11 @@ Y += walkY
           <argument>
             <kind>1</kind>
             <string>/// Pick up
+//    show_message("player gets barrel")
 
+if instance_exists(collidedWith)
 if not instance_exists(weapon) {
-    weapon = other.id
+    weapon = collidedWith
     weapon.action = a.Pick    
     weapon.owner = id
 }
