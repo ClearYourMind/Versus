@@ -175,7 +175,7 @@ if Keys[k.Down] {
 
 if Keys[k.Shoot] {
     if instance_exists(weapon)
-    if object_is_ancestor(weapon.object_index, ob_picked) 
+    if weapon.isPicked
         weapon.action = a.Shoot
 }
 
@@ -268,9 +268,13 @@ if not collidedY
             <string>/// Check collision with ob_pickable
 
 if instance_exists(collidedWith)
-if object_is_ancestor(collidedWith.object_index, ob_pickable) {
+if collidedWith.isPickable {
 //    show_message("player hits the wall")
-    event_perform(ev_collision, ob_pickable)
+    if not instance_exists(weapon) {
+        weapon = collidedWith
+        weapon.action = a.Pick    
+        weapon.owner = id
+    }
 }
 
 </string>
@@ -279,6 +283,20 @@ if object_is_ancestor(collidedWith.object_index, ob_pickable) {
       </action>
     </event>
     <event eventtype="4" ename="ob_pickable">
+      <action>
+        <libid>1</libid>
+        <id>425</id>
+        <kind>4</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -304,6 +322,7 @@ if not instance_exists(weapon) {
     weapon.action = a.Pick    
     weapon.owner = id
 }
+
 </string>
           </argument>
         </arguments>

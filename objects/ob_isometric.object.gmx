@@ -47,6 +47,7 @@ isLanded = true
 
 isKnocked = false
 isKnockable = false
+
 // knock speed
 knockX = 0
 knockY = 0
@@ -59,6 +60,14 @@ collidedWith = noone
 collidedX = false
 collidedY = false
 collidedZ = false
+
+// other flags
+isPickable = false
+isPicked = false
+isCollidable = false
+
+
+
 
 </string>
           </argument>
@@ -119,8 +128,7 @@ if dX&lt;&gt;0 or dY&lt;&gt;0
 with ob_isometric {
 //    if (object_index = ob_wall) and (other.object_index = ob_player)
     if other.id != id
-    if not object_is_ancestor(object_index, ob_picked) and not object_is_ancestor(other.object_index, ob_picked)
-//    if other.isKnockable
+    if not isPicked and not other.isPicked
     {
         if sc_isometric_collision(other.id, id) {
             id.image_blend = c_red

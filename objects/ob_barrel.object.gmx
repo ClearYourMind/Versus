@@ -5,10 +5,24 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>ob_isometric</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -26,15 +40,15 @@
           <argument>
             <kind>1</kind>
             <string>/// Init values  
-// Not used. Required by GameMaker
 
+image_speed = 0
+
+owner = noone
+
+isKnockable = true
 isDetonated = false
-isKnocked = false
 
 action = a.None
-
-X = -99
-Y = -99
 
 </string>
           </argument>
@@ -60,11 +74,8 @@ Y = -99
             <kind>1</kind>
             <string>/// Destroy
 
-with other {
-    sc_knock(X, Y, 30, 3)
-    instance_create(X, Y, ob_explosion)
-    
-}
+sc_knock(X, Y, 30, 3)
+instance_create(X, Y, ob_explosion)
 
 </string>
           </argument>
@@ -72,6 +83,20 @@ with other {
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,11 +114,10 @@ with other {
           <argument>
             <kind>1</kind>
             <string>/// Set action = a.Detonate when isKnocked
-with other {
-    if isKnocked
-    if not isDetonated {
-        action = a.Detonate
-    }
+
+if isKnocked
+if not isDetonated {
+    action = a.Detonate
 }
 
 </string>
@@ -118,15 +142,14 @@ with other {
             <kind>1</kind>
             <string>/// Action a.Detonate
 
-with other {
-    if action = a.Detonate {
-        action = a.None
-        isDetonated = true
-        image_index = 1
-        image_speed = 0.05 + (random(0.01)-0.005)
-    
-    }
+if action = a.Detonate {
+    action = a.None
+    isDetonated = true
+    image_index = 1
+    image_speed = 0.05 + (random(0.01)-0.005)
+
 }
+
 </string>
           </argument>
         </arguments>
@@ -150,10 +173,9 @@ with other {
           <argument>
             <kind>1</kind>
             <string>/// Explode
-with other {
-    if isDetonated {
-        instance_destroy()
-    }
+
+if isDetonated {
+    instance_destroy()
 }
 
 </string>
