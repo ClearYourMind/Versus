@@ -5,75 +5,9 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>ob_isometric</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Init values
-
-X = x
-Y = y
-Z = 0
-
-// cumulative speeds, persists only for 1 frame
-dX = 0
-dY = 0
-dZ = 0
-
-// for collision
-w1 = bbox_left   - x
-w2 = bbox_right  - x
-h1 = bbox_top    - y
-h2 = bbox_bottom - y
-
-
-isLanded = true
-
-isKnocked = false
-isKnockable = false
-
-// knock speed
-knockX = 0
-knockY = 0
-knockZ = 0
-
-knockDamp = 0.5
-
-
-collidedWith = noone
-collidedX = false
-collidedY = false
-collidedZ = false
-
-// other flags
-isPickable = false
-isPicked = false
-isCollidable = false
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -91,30 +25,9 @@ isCollidable = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Calculate coordinates and speeds
+            <string>/// image_blend = c_white
 
-X += dX
-Y += dY
-Z += dZ
-
-if Z &lt;= 0 {
-    Z = 0
-    isLanded = true
-}
-// else
-//    isLanded = false
-
-dX = 0
-dY = 0
-dZ = 0
-
-
-depth = -Y
-
-x = X
-y = Y - Z
-
-
+image_blend = c_white
 
 </string>
           </argument>
@@ -136,77 +49,88 @@ y = Y - Z
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process knock 
+            <string>/// Bounce (Check collision)
 
-if isKnocked {
 
-    knockZ -= grav
-    if Z &lt; 0 {
-        knockZ = 0
+collidedWith = noone
+collidedX = false
+collidedY = false
+collidedZ = false
+isLanded = false
+
+if dX&lt;&gt;0 or dY&lt;&gt;0
+with ob_collidable {
+//    if (object_index = ob_wall) and (other.object_index = ob_player)
+    if other.id != id
+    if not isPicked and not other.isPicked
+    {
+        if sc_isometric_collision(other.id, id) {
+            id.image_blend = c_red
+            other.image_blend = c_red
+            other.collidedWith = id
+        }
+        other.X += other.dX  
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // horiz collision
+            other.collidedX = true
+            id.image_blend = c_lime
+            if isKnockable
+                dX+=other.dX
+            other.X -= other.dX 
+            other.dX = 0
+        }
+        other.Y += other.dY 
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // vert collision
+            other.collidedY = true
+            id.image_blend = c_fuchsia
+            if isKnockable
+                dY+=other.dY
+            other.Y -= other.dY
+            other.dY = 0
+        }
+        other.Z += other.dZ 
+        if not instance_exists(other.collidedWith)
+        if sc_isometric_collision(other.id, id) {
+            // Z collision
+            other.collidedZ = true
+            id.image_blend = c_aqua
+//            dY+=other.dY
+            other.Z -= other.dZ
+            other.dZ = 0
+            other.isLanded = true
+        }
+       // collision found
+        other.X -= other.dX
+        other.Y -= other.dY
+        other.Z -= other.dZ 
+        if other.collidedX or other.collidedY or other.collidedZ {
+            other.collidedWith = id
+            break
+        }
     }
     
-    if isLanded {
-        knockX *= knockDamp
-        knockY *= knockDamp
-    }    
-    
-    if (abs(knockX)&lt;0.05) and (abs(knockY)&lt;0.05) and  isLanded {
-        knockX = 0
-        knockY = 0
-        knockZ = 0
-        isKnocked = false
-    }
 }
 
-dX += knockX
-dY += knockY
-dZ += knockZ
-
-
-
-/*
-if isKnocked
-    image_blend = c_yellow
-else
-    image_blend = c_white
-/*
-if isLanded
-    image_blend = c_orange
-else
-    image_blend = c_white
-
-*/
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>604</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Draw shadow
-
-draw_sprite(sp_shadow, 0, X, Y+sprite_height*0.5 )
-
-draw_self()
-
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
   </events>

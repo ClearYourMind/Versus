@@ -37,6 +37,7 @@
     <objects name="parent">
       <object>objects\ob_pickable</object>
       <object>objects\ob_picked</object>
+      <object>objects\ob_collidable</object>
       <object>objects\ob_isometric</object>
     </objects>
     <object>objects\ob_explosion</object>
