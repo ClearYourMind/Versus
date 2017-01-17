@@ -33,23 +33,202 @@ enum k {
     Right = 2,
     Up    = 3,
     Down  = 4,
-    Shoot = 5
-}
+    Shoot = 5,
+};
 
 // actions pickable
 enum a {
     None,
     Pick,
     Shoot,
-    Detonate
+    Detonate,
 }
 
 globalvar grav;
 grav = 0.2
 
+globalvar debugEnabled;
+debugEnabled = true
+
+// views
+viewMode = 1 // 1 - one view, 2 - two separate views
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Game setup
 
 application_surface_enable(false)
-show_debug_overlay(true)
+
+if debugEnabled
+    show_debug_overlay(true)     
+
+
+       
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Process views
+
+var _dx = abs(ob_player.X - ob_player_2.X)
+var _dy = abs(ob_player.Y - ob_player_2.Y)
+
+
+if (_dx &gt; view_wview[0] * 0.75) or 
+   (_dy &gt; view_hview[0] * 0.65) {
+    if viewMode&lt;&gt;2 {
+        viewMode = 2
+        sc_viewmode_change(viewMode)
+    } 
+} else
+if (_dx &lt; view_wview[0] * 0.7) or 
+   (_dy &lt; view_hview[0] * 0.6) {
+    if viewMode&lt;&gt;1 {
+        viewMode = 1
+        sc_viewmode_change(viewMode)
+    } 
+}
+
+
+switch viewMode {
+case 1:
+    var _x = (ob_player.X + ob_player_2.X) * 0.5;
+    var _y = (ob_player.Y + ob_player_2.Y) * 0.5;
+    _x -= view_wview[1] * 0.5
+    _y -= view_hview[1] * 0.5
+    var _dx = _x - view_xview[1];
+    var _dy = _y - view_yview[1];
+    
+    view_xview[1] += _dx * 0.1
+    view_yview[1] += _dy * 0.1
+    if view_xview[1] &lt; 0 view_xview[1] = 0
+    if view_yview[1] &lt; 0 view_yview[1] = 0
+    if view_xview[1] &gt; room_width - view_wview[1]
+        view_xview[1] = room_width - view_wview[1]
+    if view_yview[1] &gt; room_height - view_hview[1]
+        view_yview[1] = room_height - view_hview[1]
+    
+    break
+    
+case 2:
+    // view 1
+    _x = ob_player.X - view_wview[1] * 0.5
+    _y = ob_player.Y - view_hview[1] * 0.5
+    var _dx = _x - view_xview[1];
+    var _dy = _y - view_yview[1];
+    
+    view_xview[1] += _dx * 0.1
+    view_yview[1] += _dy * 0.1
+    if view_xview[1] &lt; 0 view_xview[1] = 0
+    if view_yview[1] &lt; 0 view_yview[1] = 0
+    if view_xview[1] &gt; room_width - view_wview[1]
+        view_xview[1] = room_width - view_wview[1]
+    if view_yview[1] &gt; room_height - view_hview[1]
+        view_yview[1] = room_height - view_hview[1]
+    
+    // view 2    
+    _x = ob_player_2.X - view_wview[2] * 0.5
+    _y = ob_player_2.Y - view_hview[2] * 0.5
+    var _dx = _x - view_xview[2];
+    var _dy = _y - view_yview[2];
+    
+    view_xview[2] += _dx * 0.1
+    view_yview[2] += _dy * 0.1
+    if view_xview[2] &lt; 0 view_xview[2] = 0
+    if view_yview[2] &lt; 0 view_yview[2] = 0
+    if view_xview[2] &gt; room_width - view_wview[2]
+        view_xview[2] = room_width - view_wview[2]
+    if view_yview[2] &gt; room_height - view_hview[2]
+        view_yview[2] = room_height - view_hview[2]
+
+    break
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>425</id>
+        <kind>4</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Setup views
+
+// views    
+view_visible[0] = false
+view_visible[1] = true
+
+sc_viewmode_change(viewMode)
+
+// view[0] - sets game scaling and screen size
+// view[1] - view for viewMode = 1        (ob_player or both)
+// view[2] - second view for viewMode = 2 (ob_player_2)
+
 </string>
           </argument>
         </arguments>

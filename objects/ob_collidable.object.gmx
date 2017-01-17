@@ -25,30 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// image_blend = c_white
-
-image_blend = c_white
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Bounce (Check collision)
 
 
@@ -74,7 +50,6 @@ with ob_collidable {
         if sc_isometric_collision(other.id, id) {
             // horiz collision
             other.collidedX = true
-            id.image_blend = c_lime
             if isKnockable
                 dX+=other.dX
             other.X -= other.dX 
@@ -85,7 +60,6 @@ with ob_collidable {
         if sc_isometric_collision(other.id, id) {
             // vert collision
             other.collidedY = true
-            id.image_blend = c_fuchsia
             if isKnockable
                 dY+=other.dY
             other.Y -= other.dY
@@ -96,7 +70,6 @@ with ob_collidable {
         if sc_isometric_collision(other.id, id) {
             // Z collision
             other.collidedZ = true
-            id.image_blend = c_aqua
 //            dY+=other.dY
             other.Z -= other.dZ
             other.dZ = 0
@@ -114,6 +87,41 @@ with ob_collidable {
     
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Debug
+
+if debugEnabled {
+    image_blend = c_white
+    
+    if collidedX 
+        image_blend = c_lime
+    else
+    if collidedY
+        image_blend = c_fuchsia
+    else
+    if collidedZ
+        image_blend = c_aqua
+}
+    
 </string>
           </argument>
         </arguments>
