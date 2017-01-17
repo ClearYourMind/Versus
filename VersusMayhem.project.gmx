@@ -43,8 +43,8 @@
     <object>objects\ob_explosion</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_bigscene</room>
     <room>rooms\rm_scene1</room>
-    <room>rooms\rm_scene1_eco</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
