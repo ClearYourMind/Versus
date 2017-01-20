@@ -132,11 +132,13 @@ case 1:
     var _y = (ob_player.Y + ob_player_2.Y) * 0.5;
     _x -= view_wview[1] * 0.5
     _y -= view_hview[1] * 0.5
-    var _dx = _x - view_xview[1];
-    var _dy = _y - view_yview[1];
+    var _dx = (_x - view_xview[1]) * 0.1;
+    var _dy = (_y - view_yview[1]) * 0.1;
+    _dx = round(_dx)
+    _dy = round(_dy)
     
-    view_xview[1] += _dx * 0.1
-    view_yview[1] += _dy * 0.1
+    view_xview[1] += _dx
+    view_yview[1] += _dy
     if view_xview[1] &lt; 0 view_xview[1] = 0
     if view_yview[1] &lt; 0 view_yview[1] = 0
     if view_xview[1] &gt; room_width - view_wview[1]
@@ -150,11 +152,13 @@ case 2:
     // view 1
     _x = ob_player.X - view_wview[1] * 0.5
     _y = ob_player.Y - view_hview[1] * 0.5
-    var _dx = _x - view_xview[1];
-    var _dy = _y - view_yview[1];
+    var _dx = (_x - view_xview[1]) * 0.1;
+    var _dy = (_y - view_yview[1]) * 0.1;
+    _dx = round(_dx)
+    _dy = round(_dy)
     
-    view_xview[1] += _dx * 0.1
-    view_yview[1] += _dy * 0.1
+    view_xview[1] += _dx
+    view_yview[1] += _dy
     if view_xview[1] &lt; 0 view_xview[1] = 0
     if view_yview[1] &lt; 0 view_yview[1] = 0
     if view_xview[1] &gt; room_width - view_wview[1]
@@ -165,11 +169,13 @@ case 2:
     // view 2    
     _x = ob_player_2.X - view_wview[2] * 0.5
     _y = ob_player_2.Y - view_hview[2] * 0.5
-    var _dx = _x - view_xview[2];
-    var _dy = _y - view_yview[2];
+    var _dx = (_x - view_xview[2]) * 0.1;
+    var _dy = (_y - view_yview[2]) * 0.1;
+    _dx = round(_dx)
+    _dy = round(_dy)
     
-    view_xview[2] += _dx * 0.1
-    view_yview[2] += _dy * 0.1
+    view_xview[2] += _dx
+    view_yview[2] += _dy
     if view_xview[2] &lt; 0 view_xview[2] = 0
     if view_yview[2] &lt; 0 view_yview[2] = 0
     if view_xview[2] &gt; room_width - view_wview[2]
@@ -184,20 +190,6 @@ case 2:
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>425</id>
-        <kind>4</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="7" enumb="4">
