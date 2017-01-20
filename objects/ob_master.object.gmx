@@ -77,11 +77,10 @@ viewMode = 1 // 1 - one view, 2 - two separate views
 
 application_surface_enable(false)
 
-alarm[0] = 10
-
 if debugEnabled
     show_debug_overlay(true)     
 
+alarm[0] = 10
 
        
 </string>
@@ -223,8 +222,8 @@ case 1:
     
 case 2:
     // view 1
-    _x = ob_player.X - view_wview[1] * 0.5
-    _y = ob_player.Y - view_hview[1] * 0.5
+    var _x = ob_player.X - view_wview[1] * 0.5
+    var _y = ob_player.Y - view_hview[1] * 0.5
     var _dx = (_x - view_xview[1]) * 0.1;
     var _dy = (_y - view_yview[1]) * 0.1;
     _dx = round(_dx)
