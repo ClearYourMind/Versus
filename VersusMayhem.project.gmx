@@ -24,6 +24,9 @@
     <script>scripts\sc_isometric_collision.gml</script>
     <script>scripts\sc_viewmode_change.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fn_default</font>
+  </fonts>
   <objects name="objects">
     <object>objects\ob_master</object>
     <object>objects\ob_wall</object>
