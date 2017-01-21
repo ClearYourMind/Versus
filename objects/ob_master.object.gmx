@@ -186,14 +186,14 @@ if (_dx &gt; view_wview[0] * 0.75) or
    (_dy &gt; view_hview[0] * 0.65) {
     if viewMode&lt;&gt;2 {
         viewMode = 2
-        sc_viewmode_change(viewMode)
+        sc_view_changemode(viewMode)
     } 
 } else
 if (_dx &lt; view_wview[0] * 0.7) or 
    (_dy &lt; view_hview[0] * 0.6) {
     if viewMode&lt;&gt;1 {
         viewMode = 1
-        sc_viewmode_change(viewMode)
+        sc_view_changemode(viewMode)
     } 
 }
 
@@ -204,56 +204,19 @@ case 1:
     var _y = (ob_player.Y + ob_player_2.Y) * 0.5;
     _x -= view_wview[1] * 0.5
     _y -= view_hview[1] * 0.5
-    var _dx = (_x - view_xview[1]) * 0.1;
-    var _dy = (_y - view_yview[1]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[1] += _dx
-    view_yview[1] += _dy
-    if view_xview[1] &lt; 0 view_xview[1] = 0
-    if view_yview[1] &lt; 0 view_yview[1] = 0
-    if view_xview[1] &gt; room_width - view_wview[1]
-        view_xview[1] = room_width - view_wview[1]
-    if view_yview[1] &gt; room_height - view_hview[1]
-        view_yview[1] = room_height - view_hview[1]
-    
+    sc_view_move(1, _x, _y)
     break
     
 case 2:
     // view 1
     var _x = ob_player.X - view_wview[1] * 0.5
     var _y = ob_player.Y - view_hview[1] * 0.5
-    var _dx = (_x - view_xview[1]) * 0.1;
-    var _dy = (_y - view_yview[1]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[1] += _dx
-    view_yview[1] += _dy
-    if view_xview[1] &lt; 0 view_xview[1] = 0
-    if view_yview[1] &lt; 0 view_yview[1] = 0
-    if view_xview[1] &gt; room_width - view_wview[1]
-        view_xview[1] = room_width - view_wview[1]
-    if view_yview[1] &gt; room_height - view_hview[1]
-        view_yview[1] = room_height - view_hview[1]
+    sc_view_move(1, _x, _y)
     
     // view 2    
     _x = ob_player_2.X - view_wview[2] * 0.5
     _y = ob_player_2.Y - view_hview[2] * 0.5
-    var _dx = (_x - view_xview[2]) * 0.1;
-    var _dy = (_y - view_yview[2]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[2] += _dx
-    view_yview[2] += _dy
-    if view_xview[2] &lt; 0 view_xview[2] = 0
-    if view_yview[2] &lt; 0 view_yview[2] = 0
-    if view_xview[2] &gt; room_width - view_wview[2]
-        view_xview[2] = room_width - view_wview[2]
-    if view_yview[2] &gt; room_height - view_hview[2]
-        view_yview[2] = room_height - view_hview[2]
+    sc_view_move(2, _x, _y)
 
     break
 }
@@ -287,7 +250,7 @@ case 2:
 view_visible[0] = false
 view_visible[1] = true
 
-sc_viewmode_change(viewMode)
+sc_view_changemode(viewMode)
 
 // view[0] - sets game scaling and screen size
 // view[1] - view for viewMode = 1        (ob_player or both)

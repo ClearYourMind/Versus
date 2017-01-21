@@ -1,4 +1,4 @@
-/// sc_viewmode_change(mode)
+/// sc_view_changemode(mode)
 
 switch (argument0) {
 case 1:
