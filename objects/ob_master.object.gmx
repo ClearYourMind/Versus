@@ -178,8 +178,46 @@ case 2:
             <kind>1</kind>
             <string>/// Process views
 
-var _dx = abs(ob_player.X - ob_player_2.X)
-var _dy = abs(ob_player.Y - ob_player_2.Y)
+var _x = ob_player.X
+var _y = ob_player.Y
+
+var _x2 = ob_player_2.X
+var _y2 = ob_player_2.Y
+
+var _ahead = view_hview[0] * 0.1
+
+switch ob_player.dir {
+case d.Left:
+    _x -= _ahead
+    break;    
+case d.Right:
+    _x += _ahead
+    break;    
+case d.Up:
+    _y -= _ahead
+    break;    
+case d.Down:
+    _y += _ahead
+    break;    
+}
+
+switch ob_player_2.dir {
+case d.Left:
+    _x2 -= _ahead
+    break;    
+case d.Right:
+    _x2 += _ahead
+    break;    
+case d.Up:
+    _y2 -= _ahead
+    break;    
+case d.Down:
+    _y2 += _ahead
+    break;    
+}
+
+var _dx = abs(_x - _x2)
+var _dy = abs(_y - _y2)
 
 
 if (_dx &gt; view_wview[0] * 0.75) or 
@@ -200,8 +238,8 @@ if (_dx &lt; view_wview[0] * 0.7) or
 
 switch viewMode {
 case 1:
-    var _x = (ob_player.X + ob_player_2.X) * 0.5;
-    var _y = (ob_player.Y + ob_player_2.Y) * 0.5;
+    _x = (_x + _x2) * 0.5;
+    _y = (_y + _y2) * 0.5;
     _x -= view_wview[1] * 0.5
     _y -= view_hview[1] * 0.5
     sc_view_move(1, _x, _y)
@@ -209,13 +247,13 @@ case 1:
     
 case 2:
     // view 1
-    var _x = ob_player.X - view_wview[1] * 0.5
-    var _y = ob_player.Y - view_hview[1] * 0.5
+    _x = _x - view_wview[1] * 0.5
+    _y = _y - view_hview[1] * 0.5
     sc_view_move(1, _x, _y)
     
     // view 2    
-    _x = ob_player_2.X - view_wview[2] * 0.5
-    _y = ob_player_2.Y - view_hview[2] * 0.5
+    _x = _x2 - view_wview[2] * 0.5
+    _y = _y2 - view_hview[2] * 0.5
     sc_view_move(2, _x, _y)
 
     break
