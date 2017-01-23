@@ -82,6 +82,7 @@ if debugEnabled
 
 alarm[0] = 10
 
+
        
 </string>
           </argument>
@@ -293,6 +294,13 @@ sc_view_changemode(viewMode)
 // view[0] - sets game scaling and screen size
 // view[1] - view for viewMode = 1        (ob_player or both)
 // view[2] - second view for viewMode = 2 (ob_player_2)
+
+
+// place GUI
+
+ob_gui.y = view_xview[1] + view_hview[1] - ob_gui.sprite_height
+
+
 
 </string>
           </argument>

@@ -16,19 +16,19 @@
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>-1</isSet>
-    <w>1613</w>
+    <w>988</w>
     <h>786</h>
     <showGrid>0</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
     <showBackgrounds>-1</showBackgrounds>
     <showForegrounds>-1</showForegrounds>
-    <showViews>0</showViews>
+    <showViews>-1</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
-    <xoffset>-268</xoffset>
-    <yoffset>-113</yoffset>
+    <page>0</page>
+    <xoffset>-146</xoffset>
+    <yoffset>-389</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -534,6 +534,11 @@
     <instance objName="ob_wall" x="540" y="276" name="inst_8E092087" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_wall" x="564" y="276" name="inst_57881E9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ob_wall" x="588" y="276" name="inst_D7BBF224" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ob_gui" x="0" y="-60" name="inst_CDA64AEC" locked="0" code="" scaleX="24" scaleY="6" colour="4278190080" rotation="0"/>
+    <instance objName="ob_gui_elem" x="12" y="-48" name="inst_A61A0965" locked="0" code="" scaleX="2.40000009536743" scaleY="2.40000009536743" colour="4294967295" rotation="0"/>
+    <instance objName="ob_gui_elem" x="48" y="-48" name="inst_F52F884E" locked="0" code="" scaleX="3.55555558204651" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="ob_gui_elem" x="48" y="-33" name="inst_B6F82A61" locked="0" code="" scaleX="3.55999994277954" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="ob_gui_elem" x="12" y="-18" name="inst_C91C6B1A" locked="0" code="" scaleX="7.30000019073486" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
