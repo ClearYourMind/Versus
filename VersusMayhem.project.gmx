@@ -16,6 +16,7 @@
     <sprite>sprites\sp_shadow</sprite>
     <sprite>sprites\sp_explosion</sprite>
     <sprite>sprites\sp_wall</sprite>
+    <sprite>sprites\sp_sq_mask</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,6 +34,11 @@
     <object>objects\ob_wall</object>
     <object>objects\ob_player</object>
     <object>objects\ob_player_2</object>
+    <object>objects\ob_explosion</object>
+    <objects name="GUI">
+      <object>objects\ob_gui</object>
+      <object>objects\ob_gui_elem</object>
+    </objects>
     <objects name="barrel">
       <object>objects\ob_barrel_pickable</object>
       <object>objects\ob_barrel_picked</object>
@@ -45,7 +51,6 @@
       <object>objects\ob_collidable</object>
       <object>objects\ob_isometric</object>
     </objects>
-    <object>objects\ob_explosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_bigscene</room>
