@@ -298,10 +298,10 @@ sc_view_changemode(viewMode)
 
 // setup GUI
 
-with instance_find(ob_gui, 0)
+with instance_find(ob_gui_panel, 0)
     object[0] = ob_player
     
-with instance_find(ob_gui, 1)
+with instance_find(ob_gui_panel, 1)
     object[0] = ob_player_2
 
 
