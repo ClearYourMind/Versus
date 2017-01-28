@@ -1,6 +1,8 @@
-/// sc_viewmode_change(mode)
+/// sc_view_changemode(mode)
 
-switch (argument0) {
+var _mode = argument0;
+
+switch (_mode) {
 case 1:
     view_visible[2] = false
     
@@ -42,4 +44,34 @@ case 2:
     view_visible[2] = true
     break
 }
+
+
+// change GUI offsets
+
+switch _mode {
+case 1:
+    with instance_find(ob_gui_panel, 0) {
+        view_offset_x = 0
+        view_offset_y = view_hview[1] - sprite_height
+        view_follow = 1
+    }
+    with instance_find(ob_gui_panel, 1) {
+        view_offset_x = view_wview[1] * 0.5
+        view_offset_y = view_hview[1] - sprite_height
+        view_follow = 1
+    }
+    break;
+case 2:
+    with instance_find(ob_gui_panel, 0) {
+        view_offset_x = 0
+        view_offset_y = view_hview[1] - sprite_height
+        view_follow = 1
+    }
+    with instance_find(ob_gui_panel, 1) {
+        view_offset_x = 0
+        view_offset_y = view_hview[2] - sprite_height
+        view_follow = 2
+    }
+}
+
 

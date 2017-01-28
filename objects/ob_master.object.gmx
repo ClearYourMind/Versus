@@ -48,7 +48,7 @@ globalvar grav;
 grav = 0.2
 
 globalvar debugEnabled;
-debugEnabled = true
+debugEnabled = show_question("Want debug?")
 
 // views
 viewMode = 1 // 1 - one view, 2 - two separate views
@@ -81,6 +81,7 @@ if debugEnabled
     show_debug_overlay(true)     
 
 alarm[0] = 10
+
 
        
 </string>
@@ -178,82 +179,83 @@ case 2:
             <kind>1</kind>
             <string>/// Process views
 
-var _dx = abs(ob_player.X - ob_player_2.X)
-var _dy = abs(ob_player.Y - ob_player_2.Y)
+var _px = ob_player.X
+var _py = ob_player.Y
+
+var _px2 = ob_player_2.X
+var _py2 = ob_player_2.Y
+
+var _ahead = view_hview[0] * 0.1
+
+switch ob_player.dir {
+case d.Left:
+    _px -= _ahead
+    break;    
+case d.Right:
+    _px += _ahead
+    break;    
+case d.Up:
+    _py -= _ahead
+    break;    
+case d.Down:
+    _py += _ahead
+    break;    
+}
+
+switch ob_player_2.dir {
+case d.Left:
+    _px2 -= _ahead
+    break;    
+case d.Right:
+    _px2 += _ahead
+    break;    
+case d.Up:
+    _py2 -= _ahead
+    break;    
+case d.Down:
+    _py2 += _ahead
+    break;    
+}
+
+var _dx = abs(_px - _px2)
+var _dy = abs(_py - _py2)
 
 
 if (_dx &gt; view_wview[0] * 0.75) or 
    (_dy &gt; view_hview[0] * 0.65) {
     if viewMode&lt;&gt;2 {
         viewMode = 2
-        sc_viewmode_change(viewMode)
+        sc_view_changemode(viewMode)
     } 
 } else
 if (_dx &lt; view_wview[0] * 0.7) or 
    (_dy &lt; view_hview[0] * 0.6) {
     if viewMode&lt;&gt;1 {
         viewMode = 1
-        sc_viewmode_change(viewMode)
+        sc_view_changemode(viewMode)
     } 
 }
 
 
 switch viewMode {
 case 1:
-    var _x = (ob_player.X + ob_player_2.X) * 0.5;
-    var _y = (ob_player.Y + ob_player_2.Y) * 0.5;
-    _x -= view_wview[1] * 0.5
-    _y -= view_hview[1] * 0.5
-    var _dx = (_x - view_xview[1]) * 0.1;
-    var _dy = (_y - view_yview[1]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[1] += _dx
-    view_yview[1] += _dy
-    if view_xview[1] &lt; 0 view_xview[1] = 0
-    if view_yview[1] &lt; 0 view_yview[1] = 0
-    if view_xview[1] &gt; room_width - view_wview[1]
-        view_xview[1] = room_width - view_wview[1]
-    if view_yview[1] &gt; room_height - view_hview[1]
-        view_yview[1] = room_height - view_hview[1]
-    
+    _px = (_px + _px2) * 0.5;
+    _py = (_py + _py2) * 0.5;
+    _px -= view_wview[1] * 0.5
+    _py -= view_hview[1] * 0.5
+    sc_view_move(1, _px, _py)
     break
     
 case 2:
     // view 1
-    var _x = ob_player.X - view_wview[1] * 0.5
-    var _y = ob_player.Y - view_hview[1] * 0.5
-    var _dx = (_x - view_xview[1]) * 0.1;
-    var _dy = (_y - view_yview[1]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[1] += _dx
-    view_yview[1] += _dy
-    if view_xview[1] &lt; 0 view_xview[1] = 0
-    if view_yview[1] &lt; 0 view_yview[1] = 0
-    if view_xview[1] &gt; room_width - view_wview[1]
-        view_xview[1] = room_width - view_wview[1]
-    if view_yview[1] &gt; room_height - view_hview[1]
-        view_yview[1] = room_height - view_hview[1]
+    _px = _px - view_wview[1] * 0.5
+    _py = _py - view_hview[1] * 0.5
+    sc_view_move(1, _px, _py)
     
     // view 2    
-    _x = ob_player_2.X - view_wview[2] * 0.5
-    _y = ob_player_2.Y - view_hview[2] * 0.5
-    var _dx = (_x - view_xview[2]) * 0.1;
-    var _dy = (_y - view_yview[2]) * 0.1;
-    _dx = round(_dx)
-    _dy = round(_dy)
-    
-    view_xview[2] += _dx
-    view_yview[2] += _dy
-    if view_xview[2] &lt; 0 view_xview[2] = 0
-    if view_yview[2] &lt; 0 view_yview[2] = 0
-    if view_xview[2] &gt; room_width - view_wview[2]
-        view_xview[2] = room_width - view_wview[2]
-    if view_yview[2] &gt; room_height - view_hview[2]
-        view_yview[2] = room_height - view_hview[2]
+    _px2 = _px2 - view_wview[2] * 0.5
+    _py2 = _py2 - view_hview[2] * 0.5
+    sc_view_move(2, _px2, _py2)
 
     break
 }
@@ -281,17 +283,28 @@ case 2:
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Setup views
+            <string>/// Setup views &amp; GUI
 
 // views    
 view_visible[0] = false
 view_visible[1] = true
 
-sc_viewmode_change(viewMode)
+sc_view_changemode(viewMode)
 
 // view[0] - sets game scaling and screen size
 // view[1] - view for viewMode = 1        (ob_player or both)
 // view[2] - second view for viewMode = 2 (ob_player_2)
+
+
+// setup GUI
+
+with instance_find(ob_gui_panel, 0)
+    object[0] = ob_player
+    
+with instance_find(ob_gui_panel, 1)
+    object[0] = ob_player_2
+
+
 
 </string>
           </argument>
