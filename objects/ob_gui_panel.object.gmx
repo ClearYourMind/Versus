@@ -132,8 +132,8 @@ repeat (instance_number(ob_gui_elem)) {
         if not instance_exists(parent)
             ok = place_meeting(x, y, other.id)
     if ok {
-        if debugEnabled
-            show_message( object_get_name(_elem.object_index) + " ("+string(_elem.id)+") " + " is in area of " + object_get_name(object_index) + " ("+string(id)+")")
+//        if debugEnabled
+//            show_message( object_get_name(_elem.object_index) + " ("+string(_elem.id)+") " + " is in area of " + object_get_name(object_index) + " ("+string(id)+")")
         _elem.ox = _elem.x - x   // make coords relative
         _elem.oy = _elem.y - y  
         _elem.parent = id

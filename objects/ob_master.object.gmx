@@ -48,7 +48,7 @@ globalvar grav;
 grav = 0.2
 
 globalvar debugEnabled;
-debugEnabled = true
+debugEnabled = show_question("Want debug?")
 
 // views
 viewMode = 1 // 1 - one view, 2 - two separate views
