@@ -35,51 +35,9 @@ object[0] = noone  // hero
 elements[20] = noone
 elem_count = 0
 
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Store elements
-
-elem_count = 0
-
-var _elem = noone
-var j = 0
-var ok = false;
-
-repeat (instance_number(ob_gui_elem)) {  
-    show_message("j="+ string(j))
-    _elem = instance_find(ob_gui_elem, j)
-    with _elem ok = place_meeting(x, y, other.id)
-    if ok {
-        show_message("elem "+string(j)+" in area!")
-        _elem.ox = _elem.x - x   // make coords relative
-        _elem.oy = _elem.y - y  
-        _elem.parent = id
-        _elem.depth = depth - j-1
-        elements[elem_count] = _elem
-        elem_count++
-    }
-    j++ 
-}
+view_follow = 0
+view_offset_x = 0
+view_offset_y = 0
 
 
 </string>
@@ -130,7 +88,10 @@ elements = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Update gui elements
+            <string>/// Move GUI to follow views
+
+x = view_xview[view_follow] + view_offset_x
+y = view_yview[view_follow] + view_offset_y
 
 
 
@@ -140,20 +101,6 @@ elements = 0
       </action>
     </event>
     <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>425</id>
-        <kind>4</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -181,7 +128,10 @@ var ok = false;
 repeat (instance_number(ob_gui_elem)) {  
     show_message("j="+ string(j))
     _elem = instance_find(ob_gui_elem, j)
-    with _elem ok = place_meeting(x, y, other.id)
+    ok = false
+    with _elem
+        if not instance_exists(parent)
+            ok = place_meeting(x, y, other.id)
     if ok {
         show_message("elem "+string(j)+" in area!")
         _elem.ox = _elem.x - x   // make coords relative
@@ -194,6 +144,32 @@ repeat (instance_number(ob_gui_elem)) {
     j++ 
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check current view
+
+if view_current = view_follow
+    draw_self()
 
 </string>
           </argument>
