@@ -126,14 +126,14 @@ var j = 0
 var ok = false;
 
 repeat (instance_number(ob_gui_elem)) {  
-    show_message("j="+ string(j))
     _elem = instance_find(ob_gui_elem, j)
     ok = false
     with _elem
         if not instance_exists(parent)
             ok = place_meeting(x, y, other.id)
     if ok {
-        show_message("elem "+string(j)+" in area!")
+        if debugEnabled
+            show_message( object_get_name(_elem.object_index) + " ("+string(_elem.id)+") " + " is in area of " + object_get_name(object_index) + " ("+string(id)+")")
         _elem.ox = _elem.x - x   // make coords relative
         _elem.oy = _elem.y - y  
         _elem.parent = id
