@@ -41,8 +41,10 @@ with ob_collidable {
     if not isPicked and not other.isPicked
     {
         if sc_isometric_collision(other.id, id) {
-            id.image_blend = c_red
-            other.image_blend = c_red
+            if debugEnabled {
+                id.image_blend = c_red
+                other.image_blend = c_red
+            }    
             other.collidedWith = id
         }
         other.X += other.dX  
